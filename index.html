@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#25372c" />
+  <meta name="description" content="Ariyan's Family Restaurant & Bar in Z-Corner, Manjari Village Road, Keshav Nagar, Mundhwa, Pune. Authentic Maharashtrian Kala Masala, Charcoal Tandoor, Seafood, Bar, and Tree View Dining." />
+  <title>Ariyan's Family Restaurant & Bar | Pune</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* 3rd UI Design System: Modern Bistro & Warm Polished Palette */
+    :root {
+      --ink: #25372c;
+      --muted: #65766b;
+      --bg: #f7f4ec;
+      --panel: #fffdf8;
+      --panel-2: #efe8d9;
+      --line: rgba(37, 55, 44, 0.14);
+      --gold: #a86636;
+      --gold-bright: #9c5129;
+      --green: #315b43;
+      --green-dark: #244a34;
+      --red-offer: #e11d48;
+      --page: 1200px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+    body {
+      margin: 0;
+      background: radial-gradient(ellipse at 50% -22%, rgba(205, 176, 128, 0.2), transparent 48%), var(--bg);
+      color: var(--ink);
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; }
+    .wrap { width: min(var(--page), calc(100% - 48px)); margin-inline: auto; }
+
+    /* Sticky Navigation */
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(250, 248, 242, 0.95);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 5px 24px rgba(37, 55, 44, 0.06);
+    }
+    .nav { min-height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 15px; }
+    .brand-mark { width: 72px; height: 72px; flex: 0 0 72px; display: grid; place-items: center; }
+    .brand-mark img { width: 100%; height: 100%; object-fit: contain; }
+    .brand-name { display: block; font-family: 'Playfair Display', Georgia, serif; font-size: 28px; font-weight: 700; line-height: 1.1; color: #203d2b; letter-spacing: -0.02em; }
+    .brand-sub { display: block; margin-top: 5px; color: var(--gold-bright); font-size: 9.5px; letter-spacing: 0.2em; font-weight: 700; }
+    .nav-right { display: flex; align-items: center; gap: 24px; }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a { color: #48594d; font-size: 13px; font-weight: 600; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold-bright); }
+    .socials { display: flex; align-items: center; gap: 9px; }
+    .social-icon {
+      width: 42px; height: 42px; display: inline-grid; place-items: center;
+      border: 1px solid rgba(37, 55, 44, 0.15); border-radius: 50%;
+      background: var(--panel); color: var(--green);
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .social-icon:hover { transform: translateY(-2px); border-color: var(--gold); }
+    .social-icon svg { width: 19px; height: 19px; }
+
+    /* Quick Links Bar */
+    .quick-links { padding: 16px 0; background: rgba(255, 255, 255, 0.4); border-bottom: 1px solid var(--line); }
+    .quick-links-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+    .quick-link {
+      min-height: 70px; padding: 12px 16px; display: flex; align-items: center; gap: 12px;
+      background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+      box-shadow: 0 8px 22px rgba(37, 55, 44, 0.05); transition: 0.2s;
+    }
+    .quick-link:hover { transform: translateY(-3px); border-color: var(--gold); background: #ffffff; }
+    .quick-link svg { width: 22px; height: 22px; flex-shrink: 0; color: var(--green); }
+    .quick-link strong { display: block; font-size: 13px; line-height: 1.2; color: var(--ink); }
+    .quick-link small { display: block; font-size: 10.5px; color: var(--muted); margin-top: 2px; }
+    .quick-arrow { width: 14px; height: 14px; margin-left: auto; color: var(--muted); }
+
+    /* Hero Section */
+    .hero { padding: 64px 0 56px; background: linear-gradient(180deg, rgba(255,255,255,0.46), transparent); }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; align-items: center; gap: 54px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--gold-bright); font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 28px; height: 1.5px; background: var(--gold); }
+    h1 { margin: 18px 0 16px; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(42px, 5.2vw, 68px); line-height: 1.04; font-weight: 500; letter-spacing: -0.03em; }
+    h1 em { color: #a65e32; font-style: italic; }
+    .hero-copy { max-width: 520px; color: var(--muted); font-size: 16px; line-height: 1.7; margin-bottom: 20px; }
+    .hero-address { display: flex; align-items: flex-start; gap: 9px; margin-bottom: 28px; color: #425448; font-size: 13px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      min-height: 48px; padding: 12px 22px; display: inline-flex; align-items: center; justify-content: center;
+      gap: 10px; border-radius: 999px; font-size: 13px; font-weight: 700; cursor: pointer; transition: 0.2s;
+    }
+    .btn-primary { background: var(--green); border: 1px solid var(--green); color: #fffdf6; box-shadow: 0 8px 22px rgba(46,90,64,0.18); }
+    .btn-primary:hover { background: var(--green-dark); border-color: var(--green-dark); transform: translateY(-2px); }
+    .btn-secondary { background: rgba(255,255,255,0.6); border: 1px solid rgba(49,91,67,0.3); color: var(--green); }
+    .btn-secondary:hover { background: #fffdf8; border-color: var(--green); transform: translateY(-2px); }
+
+    .hero-photo {
+      position: relative; min-height: 440px; border-radius: 26px; overflow: hidden;
+      border: 1px solid var(--line); background: #30352f; box-shadow: 0 24px 70px rgba(37,55,44,0.14);
+    }
+    .hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(12,16,13,0.75), transparent 55%); }
+    .photo-caption { position: absolute; z-index: 2; bottom: 24px; left: 24px; right: 24px; display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; }
+    .photo-caption small { display: block; color: #e2d4bd; text-transform: uppercase; letter-spacing: 0.16em; font-size: 9.5px; }
+    .photo-caption strong { display: block; margin-top: 4px; font-family: 'Playfair Display', Georgia, serif; font-size: 24px; color: #fff; font-weight: 600; }
+    .photo-chip { border: 1px solid rgba(255,255,255,0.4); border-radius: 99px; padding: 6px 12px; color: #fff; font-size: 10.5px; white-space: nowrap; }
+
+    /* Sections */
+    .section { padding: 68px 0; border-top: 1px solid var(--line); }
+    .section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 34px; }
+    .section-kicker { display: block; color: var(--gold-bright); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; }
+    h2 { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 4vw, 44px); line-height: 1.12; font-weight: 600; letter-spacing: -0.025em; }
+    .section-note { max-width: 480px; margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.7; }
+
+    /* Table Booking Component */
+    .booking-card {
+      background: #fffdf8; border: 1px solid var(--line); border-radius: 22px;
+      padding: clamp(24px, 4vw, 36px); box-shadow: 0 16px 44px rgba(37,55,44,0.08);
+    }
+    .booking-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 20px 0; }
+    .field-label { display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-bright); margin-bottom: 6px; }
+    .input-box {
+      width: 100%; min-height: 46px; border-radius: 12px; border: 1px solid rgba(37,55,44,0.2);
+      background: #fdfcf9; color: var(--ink); padding: 10px 14px; font-size: 13.5px; font-family: inherit;
+    }
+    .input-box:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 3px rgba(49,91,67,0.12); }
+
+    /* Speciality & Dish Cards */
+    .speciality-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+    .speciality-card {
+      border: 1px solid var(--line); border-radius: 18px; background: var(--panel);
+      overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 12px 32px rgba(37,55,44,0.06);
+      transition: transform 0.25s, border-color 0.25s;
+    }
+    .speciality-card:hover { transform: translateY(-4px); border-color: var(--gold); }
+    .speciality-photo { aspect-ratio: 1.55 / 1; overflow: hidden; background: #efe8d9; position: relative; }
+    .speciality-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .speciality-card:hover .speciality-photo img { transform: scale(1.045); }
+    .speciality-body { padding: 22px; flex: 1; display: flex; flex-direction: column; }
+    .speciality-tag { color: var(--gold-bright); font-size: 10px; letter-spacing: 0.16em; font-weight: 700; text-transform: uppercase; }
+    .speciality-body h3 { margin: 8px 0; font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 600; }
+    .speciality-body p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+
+    /* Menu Headings & Dish Grid */
+    .menu-category-title {
+      font-family: 'Playfair Display', Georgia, serif; font-size: 28px; color: var(--green);
+      margin: 42px 0 20px; padding-bottom: 8px; border-bottom: 1px solid rgba(49,91,67,0.22);
+      display: flex; align-items: center; gap: 12px;
+    }
+    .menu-category-title::before { content: ""; width: 8px; height: 8px; background: var(--gold); border-radius: 50%; }
+    .dish-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+    .dish-card {
+      border: 1px solid var(--line); border-radius: 18px; background: var(--panel);
+      overflow: hidden; box-shadow: 0 12px 32px rgba(37,55,44,0.06); transition: 0.25s;
+    }
+    .dish-card:hover { transform: translateY(-4px); border-color: var(--gold); }
+    .dish-photo { aspect-ratio: 1.4 / 1; overflow: hidden; background: #efe8d9; position: relative; }
+    .dish-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .dish-card:hover .dish-photo img { transform: scale(1.045); }
+    .dish-badge {
+      position: absolute; top: 12px; right: 12px;
+      background: rgba(32,61,43,0.9); border: 1px solid rgba(217,168,94,0.45);
+      color: #f7f4eb; font-size: 9.5px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 4px 10px; border-radius: 99px;
+    }
+    .dish-body { padding: 20px; }
+    .dish-number { color: var(--gold-bright); font-size: 10px; letter-spacing: 0.14em; font-weight: 700; }
+    .dish-body h3 { margin: 6px 0; font-family: 'Playfair Display', Georgia, serif; font-size: 21px; font-weight: 600; }
+    .dish-body p { margin: 0; color: var(--muted); font-size: 12.5px; line-height: 1.65; }
+
+    /* Drinks Section */
+    .drink-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+    .drink-card {
+      display: grid; grid-template-columns: minmax(150px, 0.85fr) 1.15fr; min-height: 220px;
+      overflow: hidden; background: var(--panel); border: 1px solid var(--line);
+      border-radius: 20px; box-shadow: 0 12px 32px rgba(37,55,44,0.06);
+    }
+    .drink-photo { min-height: 220px; position: relative; background: #efe8d9; }
+    .drink-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .drink-copy { padding: 24px; align-self: center; }
+    .drink-tag { color: var(--gold-bright); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; }
+    .drink-copy h3 { margin: 8px 0; font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 600; }
+    .drink-copy p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
+    .offer-badge {
+      display: inline-block; background: #f2e2c7; color: #71401f; font-size: 11px;
+      font-weight: 800; padding: 6px 12px; border-radius: 999px; margin-top: 12px;
+      border: 1px solid rgba(168,102,54,0.26);
+    }
+
+    /* Menu PDF Iframes */
+    .menu-card-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 36px; }
+    .menu-card { border: 1px solid var(--line); border-radius: 18px; background: var(--panel); overflow: hidden; }
+    .menu-card-head { padding: 20px 24px; }
+    .menu-card-head h3 { margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 22px; }
+    .menu-card-head p { margin: 4px 0 0; color: var(--muted); font-size: 12.5px; }
+    .menu-card-view { width: 100%; height: 600px; border: 0; border-top: 1px solid var(--line); background: #ffffff; }
+
+    /* Footer */
+    footer { padding: 44px 0; background: #203a2c; color: #e6dbdb; border-top: 1px solid #315640; font-size: 13px; }
+    .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-brand { font-family: 'Playfair Display', Georgia, serif; font-size: 30px; font-weight: 700; color: #fcfcfc; }
+    .footer-address { margin-top: 8px; color: #f3f0f0; font-size: 20.5px; }
+
+    /* Review Assistant Modal */
+    .modal-overlay { display: none; position: fixed; inset: 0; z-index: 100; align-items: center; justify-content: center; padding: 18px; background: rgba(5,8,6,0.8); backdrop-filter: blur(8px); }
+    .modal-overlay.is-open { display: flex; }
+    .modal-dialog { position: relative; width: min(580px, 100%); max-height: min(92vh, 760px); overflow: auto; padding: 32px; border-radius: 20px; background: #fffdf8; border: 1px solid rgba(168,102,54,0.35); box-shadow: 0 28px 90px rgba(0,0,0,0.45); }
+    .modal-close { position: absolute; top: 16px; right: 16px; width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(37,55,44,0.2); background: #f2eee5; cursor: pointer; font-size: 20px; line-height: 1; color: var(--ink); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+      .dish-grid, .speciality-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .quick-links-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .booking-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .dish-grid, .speciality-grid, .drink-grid, .menu-card-grid { grid-template-columns: 1fr; }
+      .drink-card { grid-template-columns: 1fr; }
+      .drink-photo { min-height: 180px; }
+      .menu-card-view { height: 480px; }
+      .footer-row { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header" id="top">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Ariyan's Restaurant home">
+        <div class="brand-mark">
+          <img src="logo-clean.png" alt="Ariyan's Restaurant Logo" onerror="this.src='logo-clean.png';" />
+        </div>
+        <span>
+          <span class="brand-name">Ariyan's</span>
+          <span class="brand-sub">FAMILY RESTAURANT &amp; BAR</span>
+        </span>
+      </a>
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#speciality">Our Specialty</a>
+          <a href="#booking">Table Booking</a>
+          <a href="#menu">Menu</a>
+          <a href="#drinks">Drinks</a>
+          <a href="#visit">Find us</a>
+        </nav>
+        <div class="socials" aria-label="Social links">
+          <a class="social-icon" href="https://wa.me/919325024374" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.5 11.7a8.4 8.4 0 0 1-12.4 7.4L3 20.4l1.4-4.9a8.4 8.4 0 1 1 16.1-3.8Z" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8.3 7.9c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.8 1.9c.1.3.1.5-.1.7l-.6.7c-.2.2-.2.4 0 .6.4.8 1.1 1.5 1.9 1.9.2.1.4.1.6-.1l.8-.9c.2-.2.4-.3.7-.2l1.8.9c.3.1.4.3.4.5 0 .3-.2 1.1-.7 1.5-.5.5-1.1.7-1.8.7-.6 0-1.5-.2-2.8-.9-1.7-.9-3.1-2.6-3.5-3.2-.4-.6-1-1.6-1-2.5 0-.9.5-1.4.7-1.6Z"/></svg>
+          </a>
+          <a class="social-icon" href="https://www.instagram.com/aryansfamilyofficial?igsh=czhiZWthMzU0ZDUz&utm_source=qr" target="_blank" rel="noopener noreferrer" title="Instagram">
+            <svg fill="currentColor" viewBox="0 0 24 24"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.8" cy="6.5" r="1.15"/></svg>
+          </a>
+          <a class="social-icon" href="https://www.facebook.com/legendaryans/" target="_blank" rel="noopener noreferrer" title="Facebook">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M13.4 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5v2.1H6.8v3.2h2.9V21h3.7Z"/></svg>
+          </a>
+          <button class="social-icon" onclick="openReviewModal()" title="Write a Google Review" style="cursor:pointer;">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="m12 2.7 2.8 5.7 6.3.9-4.6 4.5 1.1 6.3-5.6-3-5.6 3 1.1-6.3-4.6-4.5 6.3-.9L12 2.7Z"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Quick Links Bar -->
+  <section class="quick-links" aria-label="Connect with Ariyan's">
+    <div class="wrap quick-links-grid">
+      <a class="quick-link" href="https://wa.me/919325024374" target="_blank" rel="noopener noreferrer">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        <span><strong>WhatsApp</strong><small>Chat with us</small></span>
+        <span class="quick-arrow">&rarr;</span>
+      </a>
+      <a class="quick-link" href="#booking">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <span><strong>Table Booking</strong><small>Instant reservation</small></span>
+        <span class="quick-arrow">&rarr;</span>
+      </a>
+      <a class="quick-link" href="https://www.instagram.com/aryansfamilyofficial?igsh=czhiZWthMzU0ZDUz&utm_source=qr" target="_blank" rel="noopener noreferrer">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        <span><strong>Instagram</strong><small>Follow @aryansfamilyofficial</small></span>
+        <span class="quick-arrow">&rarr;</span>
+      </a>
+      <button class="quick-link" onclick="openReviewModal()" style="cursor:pointer; text-align:left; width:100%; font-family:inherit;">
+        <svg fill="currentColor" viewBox="0 0 24 24"><path d="m12 2.7 2.8 5.7 6.3.9-4.6 4.5 1.1 6.3-5.6-3-5.6 3 1.1-6.3-4.6-4.5 6.3-.9L12 2.7Z"/></svg>
+        <span><strong>Google Reviews</strong><small>Ready review draft</small></span>
+        <span class="quick-arrow">&rarr;</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Z-Corner Pune</span>
+        <h1>Ariyan's<em>Family Restaurant & Bar.</em></h1>
+        <p class="hero-copy"> </p>
+        <p class="hero-address">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--gold); flex-shrink:0;"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.2"/></svg>
+          <span>Z-Corner, Manjari Village Road, Lonkar Wasti, Keshav Nagar, Mundhwa, Pune 411036</span>
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#booking">Reserve Table &rarr;</a>
+          <a class="btn btn-secondary" href="https://wa.me/919325024374" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+          <a class="btn btn-secondary" href="#menu">Explore Menu</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="tandoor-platter.png" alt="Ariyan's Tandoori Specials" />
+        <div class="photo-caption">
+          <span>
+            <small>Authentic Tandoor &amp; Kala Masala</small>
+            <strong>Made to be shared</strong>
+          </span>
+          <span class="photo-chip">Warm · Fresh · Local</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Responsive Table Booking Component -->
+  <section class="section" id="booking" style="background: rgba(255,255,255,0.5);">
+    <div class="wrap" style="max-width: 960px;">
+      <div class="booking-card">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:18px;">
+          <div>
+            <span class="section-kicker">Instant Reservation</span>
+            <h2 style="font-size:28px;">Reserve Your Table</h2>
+            <p style="margin:4px 0 0; color:var(--muted); font-size:13px;">Pick your date, time, and party size — instant WhatsApp confirmation.</p>
+          </div>
+          <div style="border:1px solid var(--line); border-radius:99px; padding:6px 14px; font-size:12px; font-weight:700; color:var(--green);">
+            🕒 Open Daily: 11:00 AM – 11:30 PM
+          </div>
+        </div>
+
+        <form id="tableBookingForm" onsubmit="handleBookingSubmit(event)">
+          <div class="booking-grid">
+            <div>
+              <label class="field-label" for="bookDate">Date</label>
+              <input class="input-box" type="date" id="bookDate" required />
+            </div>
+            <div>
+              <label class="field-label" for="bookTime">Time Slot</label>
+              <select class="input-box" id="bookTime" required>
+                <option value="12:30 PM">12:30 PM (Lunch)</option>
+                <option value="1:30 PM">1:30 PM (Lunch)</option>
+                <option value="2:30 PM">2:30 PM (Lunch)</option>
+                <option value="7:00 PM">7:00 PM (Dinner)</option>
+                <option value="8:00 PM" selected>8:00 PM (Dinner)</option>
+                <option value="9:00 PM">9:00 PM (Dinner)</option>
+                <option value="10:00 PM">10:00 PM (Dinner)</option>
+              </select>
+            </div>
+            <div>
+              <label class="field-label" for="bookGuests">Party Size</label>
+              <select class="input-box" id="bookGuests" required>
+                <option value="2 Guests">2 Guests (Couple / Pair)</option>
+                <option value="4 Guests" selected>4 Guests (Family / Friends)</option>
+                <option value="6 Guests">6 Guests</option>
+                <option value="8 Guests">8 Guests</option>
+                <option value="10+ Guests">10+ Guests (Large Group)</option>
+                <option value="25+ Guests (Party Hall)">25+ Guests (Party Hall Event)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="booking-grid">
+            <div>
+              <label class="field-label" for="bookZone">Seating Zone</label>
+              <select class="input-box" id="bookZone">
+                <option value="Special Family Seating (Tree / Jungle View)">Special Family Seating (Tree / Jungle View)</option>
+                <option value="A/C Executive Dining">A/C Executive Dining</option>
+                <option value="Guitar Non A/C Lounge">Guitar Non A/C Lounge</option>
+                <option value="Shehnai Open Terrace">Shehnai Open Terrace</option>
+                <option value="Piano Party Hall (Free Decoration!)">Piano Party Hall (Free Decoration!)</option>
+              </select>
+            </div>
+            <div>
+              <label class="field-label" for="bookName">Your Full Name</label>
+              <input class="input-box" type="text" id="bookName" placeholder="e.g. Rahul Patil" required />
+            </div>
+            <div>
+              <label class="field-label" for="bookPhone">Contact Number</label>
+              <input class="input-box" type="tel" id="bookPhone" placeholder="e.g. 98765 43210" required />
+            </div>
+          </div>
+
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; margin-top:22px;">
+            <div style="font-size:12px; color:var(--muted);">
+              ✨ <strong style="color:var(--ink);">Free Party Hall Decoration:</strong> Birthdays, anniversaries, and family get-togethers.
+            </div>
+            <button class="btn btn-primary" type="submit" style="font-size:14px; min-height:50px; padding:12px 28px;">
+              Confirm Booking via WhatsApp &rarr;
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR SPECIALITY SECTION -->
+  <section class="section speciality-section" id="speciality" style="background:linear-gradient(180deg, rgba(235,225,206,0.34), transparent 74%);">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="section-kicker">Experience Ariyan's</span>
+          <h2>Our Specialty</h2>
+        </div>
+        <p class="section-note">Discover what makes dining at Ariyan's an unforgettable experience for families, foodies, and celebrations.</p>
+      </div>
+
+      <div class="speciality-grid">
+        <article class="speciality-card">
+          <div class="speciality-photo"><img src="c-food.png" alt="C Food Chinese Food" loading="lazy" /></div>
+          <div class="speciality-body">
+            <span class="speciality-tag">Oriental Flavours</span>
+            <h3>C Food (Chinese Food)</h3>
+            <p>Fiery wok-tossed noodles, crispy fried starters, flavorful Manchurians, and savory sauces crafted with fresh vegetables and meats.</p>
+          </div>
+        </article>
+
+        <article class="speciality-card">
+          <div class="speciality-photo"><img src="dum-biryani.jpg" alt="Authentic Biryani" loading="lazy" /></div>
+          <div class="speciality-body">
+            <span class="speciality-tag">Dum Pukht Special</span>
+            <h3>Authentic Biryani</h3>
+            <p>Fragrant long-grain basmati rice slow-cooked with sealed dum spices, tender cuts, and caramelized onions, served with cooling raita.</p>
+          </div>
+        </article>
+
+        <article class="speciality-card">
+          <div class="speciality-photo"><img src="maharashtrian-thali.png" alt="Maharashtrian Thali" loading="lazy" /></div>
+          <div class="speciality-body">
+            <span class="speciality-tag">Local Heritage</span>
+            <h3>Maharashtrian Dish / Thali</h3>
+            <p>Heirloom recipes featuring our legendary Kala Masala gravies, hearty rassa, and piping hot Jowar Bhakri made with authentic Pune spices.</p>
+          </div>
+        </article>
+
+        <article class="speciality-card">
+          <div class="speciality-photo"><img src="tandoor-platter.png" alt="Tandoor and Grills" loading="lazy" /></div>
+          <div class="speciality-body">
+            <span class="speciality-tag">Charcoal Grilled</span>
+            <h3>Tandoor &amp; Grills</h3>
+            <p>Succulent kebabs, chicken lollipops, and whole fish char-grilled over flaming earthen tandoors, delivering rich smoky perfection.</p>
+          </div>
+        </article>
+
+        <article class="speciality-card">
+          <div class="speciality-photo"><img src="family-seating.png" alt="Family Seating Tree Jungle View" loading="lazy" /></div>
+          <div class="speciality-body">
+            <span class="speciality-tag">Cozy Ambiance</span>
+            <h3>Special Family Seating (Tree / Jungle View)</h3>
+            <p>Dine amidst lush greenery with peaceful tree canopy views, comfortable breeze, and spacious tables tailored for family privacy.</p>
+          </div>
+        </article>
+
+        <article class="speciality-card">
+          <div class="speciality-photo"><img src="party-hall.png" alt="Party Hall" loading="lazy" /></div>
+          <div class="speciality-body">
+            <span class="speciality-tag">Celebrations</span>
+            <h3>Party Hall</h3>
+            <p>Host your birthdays, anniversaries, and family celebrations with us. We provide full event hall decoration completely <strong>free of cost</strong>!</p>
+          </div>
+        </article>          
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU SECTION -->
+  <section class="section" id="menu" style="background: rgba(255,255,255,0.38);">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="section-kicker">A taste of Ariyan's</span>
+          <h2>From the kitchen</h2>
+        </div>
+        <p class="section-note">Handcrafted starters and aromatic main courses prepared fresh to order in our kitchen.</p>
+      </div>
+
+      <h3 class="menu-category-title">Starters</h3>
+      <div class="dish-grid">
+        <article class="dish-card">
+          <div class="dish-photo"><img src="bombil-kurkure.png" alt="Bombil Kurkure" loading="lazy" /><span class="dish-badge">Crispy</span></div>
+          <div class="dish-body"><span class="dish-number">01 · SEAFOOD STARTER</span><h3>Bombil Kurkure</h3><p>Crispy fresh Bombay Duck fillets coated with coarse semolina (rawa) and spices, fried to a golden crunch.</p></div>
+        </article>
+
+        <article class="dish-card">
+          <div class="dish-photo"><img src="soya-chaap.png" alt="Soya Chaap" loading="lazy" /><span class="dish-badge">Veg Special</span></div>
+          <div class="dish-body"><span class="dish-number">02 · VEGETARIAN GRILL</span><h3>Soya Chaap</h3><p>Tender protein-packed soya chaap skewers marinated in yogurt, tandoori masala, and grilled over charcoal.</p></div>
+        </article>
+
+        <article class="dish-card">
+          <div class="dish-photo"><img src="tandoor-platter.png" alt="Chicken Matka Tandoori" loading="lazy" /><span class="dish-badge">Chef's Signature</span></div>
+          <div class="dish-body"><span class="dish-number">03 · CLAY POT SPECIAL</span><h3>Chicken Matka Tandoori</h3><p>Juicy chicken marinated in aromatic herbs and roasted inside an authentic earthen clay pot for deep rustic flavor.</p></div>
+        </article>
+
+        <article class="dish-card">
+          <div class="dish-photo"><img src="chicken-tandoori-lollipop.png" alt="Chicken Tandoori Lollipop" loading="lazy" /><span class="dish-badge">Bestseller</span></div>
+          <div class="dish-body"><span class="dish-number">04 · TANDOORI TWIST</span><h3>Chicken Tandoori Lollipop</h3><p>Classic crispy chicken drumettes brushed with spicy tandoori marinade and charred over red-hot coals.</p></div>
+        </article>
+
+        <article class="dish-card">
+          <div class="dish-photo"><img src="bangda-tandoori.png" alt="Bangda Tandoori" loading="lazy" /><span class="dish-badge">Fresh Catch</span></div>
+          <div class="dish-body"><span class="dish-number">05 · COASTAL GRILL</span><h3>Bangda Tandoori (Mackerel Tandoori)</h3><p>Whole fresh Mackerel infused with spicy ginger-garlic coastal rub and roasted with charred edges.</p></div>
+        </article>
+
+        <article class="dish-card">
+          <div class="dish-photo"><img src="prawns-koliwada.png" alt="Prawns Koliwada" loading="lazy" /><span class="dish-badge">Crisp &amp; Juicy</span></div>
+          <div class="dish-body"><span class="dish-number">06 · PRAWNS SPECIAL</span><h3>Prawns Koliwada / Tandoori Masala</h3><p>Jumbo prawns dipped in crisp spicy Koliwada batter or skewered in smoky tandoori coastal seasonings.</p></div>
+        </article>
+      </div>
+
+      <h3 class="menu-category-title">Hearty Main Course</h3>
+      <div class="dish-grid">
+        <article class="dish-card">
+          <div class="dish-photo"><img src="indo-chinese.png" alt="Manchurian" loading="lazy" /><span class="dish-badge">Indo-Chinese</span></div>
+          <div class="dish-body"><span class="dish-number">07 · ORIENTAL GRAVY</span><h3>Manchurian</h3><p>Savory vegetable or chicken dumplings tossed in a dark soy, ginger, garlic, and fresh scallion gravy.</p></div>
+        </article>
+
+        <article class="dish-card">
+          <div class="dish-photo"><img src="veg-maharaja.jpg" alt="Paneer Jafrani Masala" loading="lazy" /><span class="dish-badge">Royal Gravy</span></div>
+          <div class="dish-body"><span class="dish-number">08 · VEGETARIAN ROYAL</span><h3>Paneer Jafrani / Veg Jafrani Masala</h3><p>Velvety saffron-infused rich cashew gravy simmered with soft paneer cubes or mixed garden vegetables.</p></div>
+        </article>
+
+        <article class="dish-card">
+          <div class="dish-photo"><img src="chicken-kala-masala.png" alt="Chicken Kala Masala" loading="lazy" /><span class="dish-badge">House Special</span></div>
+          <div class="dish-body"><span class="dish-number">09 · MAHARASHTRIAN ICON</span><h3>Chicken Kala Masala</h3><p>Slow-cooked country chicken prepared with traditional roasted black spices and onions. Irresistible with Bhakri!</p></div>
+        </article>
+
+        <article class="dish-card">
+          <div class="dish-photo"><img src="jeera-chicken.png" alt="Jeera Chicken" loading="lazy" /><span class="dish-badge">Aromatic</span></div>
+          <div class="dish-body"><span class="dish-number">10 · CUMIN DELIGHT</span><h3>Jeera Chicken</h3><p>Tender chicken pieces tossed with roasted cumin seeds, fresh cracked pepper, and rich Indian spices.</p></div>
+        </article>
+      </div>
+
+      <!-- Menu Card Grid with official PDF embeds -->
+      <div class="menu-card-grid" aria-label="Restaurant menu cards">
+        <article class="menu-card">
+          <div class="menu-card-head">
+            <h3>AC Menu</h3>
+            <p>View the complete menu below or download directly.</p>
+          </div>
+          <iframe class="menu-card-view" src="ariyans-ac-menu.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH" title="Ariyan's AC restaurant menu" loading="lazy"></iframe>
+        </article>
+        <article class="menu-card">
+          <div class="menu-card-head">
+            <h3>Non-AC Menu</h3>
+            <p>View the complete menu below or download directly.</p>
+          </div>
+          <iframe class="menu-card-view" src="ariyans-non-ac-menu.pdf#toolbar=0&navpanes=0&scrollbar=1&view=FitH" title="Ariyan's non-AC restaurant menu" loading="lazy"></iframe>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DRINKS SECTION (JAMUN SHOT & JÄGER BOMB) -->
+  <section class="section" id="drinks" style="background: linear-gradient(180deg, rgba(215,173,104,0.10), transparent 70%);">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="section-kicker">Signature Shots &amp; Bar</span>
+          <h2>Drinks for the evening</h2>
+        </div>
+        <p class="section-note">Bold spirits, energetic mixes, and our famous limited-time party offers.</p>
+      </div>
+      <div class="drink-grid">
+        <article class="drink-card">
+          <div class="drink-photo"><img src="jamun-shot.png" alt="Jamun Shot" loading="lazy" /></div>
+          <div class="drink-copy">
+            <span class="drink-tag">House Signature Shot</span>
+            <h3>Jamun Shot</h3>
+            <p>Crafted with real wild black plum (Jamun) pulp, black salt, and a refreshing chilled spirit punch.</p>
+            <div class="offer-badge">🔥 1 Jamun Shot ₹350 — Buy 1 Get 1 Free!</div>
+          </div>
+        </article>
+
+        <article class="drink-card">
+          <div class="drink-photo"><img src="jagerbomb.png" alt="Jäger Bomb Shots" loading="lazy" /></div>
+          <div class="drink-copy">
+            <span class="drink-tag">Energy &amp; Herbal Shot</span>
+            <h3>Jäger Bomb Shots</h3>
+            <p>The timeless party spectacle—a shot of authentic Jägermeister dropped into chilled Red Bull for an energetic kick.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="visit">
+    <div class="wrap footer-row">
+      <div>
+        <span class="footer-brand">Ariyan's Family Restaurant &amp; Bar</span>
+        <div class="footer-address">Z-Corner, Manjari Village Road, Lonkar Wasti, Keshav Nagar, Mundhwa, Pune 411036</div>
+        <div class="footer-address" style="opacity: 0.75; font-size:11.5px;">Menu descriptions and photos are illustrative; please confirm current availability with the restaurant.</div>
+      </div>
+      <div class="socials" aria-label="Follow and review">
+        <a class="social-icon" href="https://wa.me/919325024374" target="_blank" rel="noopener noreferrer"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.5 11.7a8.4 8.4 0 0 1-12.4 7.4L3 20.4l1.4-4.9a8.4 8.4 0 1 1 16.1-3.8Z" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8.3 7.9c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.8 1.9c.1.3.1.5-.1.7l-.6.7c-.2.2-.2.4 0 .6.4.8 1.1 1.5 1.9 1.9.2.1.4.1.6-.1l.8-.9c.2-.2.4-.3.7-.2l1.8.9c.3.1.4.3.4.5 0 .3-.2 1.1-.7 1.5-.5.5-1.1.7-1.8.7-.6 0-1.5-.2-2.8-.9-1.7-.9-3.1-2.6-3.5-3.2-.4-.6-1-1.6-1-2.5 0-.9.5-1.4.7-1.6Z"/></svg></a>
+        <a class="social-icon" href="https://www.instagram.com/aryansfamilyofficial?igsh=czhiZWthMzU0ZDUz&utm_source=qr" target="_blank" rel="noopener noreferrer"><svg fill="currentColor" viewBox="0 0 24 24"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.8" cy="6.5" r="1.15"/></svg></a>
+        <a class="social-icon" href="https://www.facebook.com/legendaryans/" target="_blank" rel="noopener noreferrer"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M13.4 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5v2.1H6.8v3.2h2.9V21h3.7Z"/></svg></a>
+        <button class="social-icon" onclick="openReviewModal()" style="cursor:pointer;"><svg fill="currentColor" viewBox="0 0 24 24"><path d="m12 2.7 2.8 5.7 6.3.9-4.6 4.5 1.1 6.3-5.6-3-5.6 3 1.1-6.3-4.6-4.5 6.3-.9L12 2.7Z"/></svg></button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Google Review Assistant Modal -->
+  <div class="modal-overlay" id="reviewModal">
+    <div class="modal-dialog">
+      <button class="modal-close" onclick="closeReviewModal()">&times;</button>
+      <span class="section-kicker">Google review helper</span>
+      <h2 style="font-size:26px; margin-bottom:6px;">Ready review draft</h2>
+      <p style="font-size:13px; color:var(--muted); margin-bottom:16px;">Pick a topic to generate a ready 5-star draft, copy it, and paste it on Google Maps.</p>
+
+      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px;">
+        <button class="btn btn-secondary" onclick="setMood('food')" style="padding:6px 14px; font-size:12px; min-height:36px;">Food</button>
+        <button class="btn btn-secondary" onclick="setMood('family')" style="padding:6px 14px; font-size:12px; min-height:36px;">Family Visit</button>
+        <button class="btn btn-secondary" onclick="setMood('service')" style="padding:6px 14px; font-size:12px; min-height:36px;">Service</button>
+        <button class="btn btn-secondary" onclick="setMood('drinks')" style="padding:6px 14px; font-size:12px; min-height:36px;">Drinks</button>
+      </div>
+
+      <div id="reviewText" style="padding:20px; border-radius:14px; background:#f5f0e6; font-family:'Playfair Display', Georgia, serif; font-style:italic; font-size:15px; line-height:1.6; margin-bottom:16px;">
+        "The Chicken Matka Tandoori here is cooked to absolute perfection. Tender, smoky, and infused with deep earthen aromas. Easily our favorite non-veg starter in Keshav Nagar!"
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr 1.3fr; gap:8px;">
+        <button class="btn btn-secondary" onclick="shuffleDraft()" style="font-size:12px;">Shuffle Draft</button>
+        <button class="btn btn-secondary" onclick="copyDraft()" style="font-size:12px;">Copy Draft</button>
+        <button class="btn btn-primary" onclick="copyAndOpenGoogle()" style="font-size:12px;">Copy &amp; Open Google</button>
+      </div>
+      <p id="copyStatus" style="font-size:11.5px; color:var(--green); margin-top:10px; min-height:18px;"></p>
+    </div>
+  </div>
+
+  <script>
+    // Set default date to today
+    document.getElementById('bookDate').value = new Date().toISOString().split('T')[0];
+
+    // WhatsApp Table Booking Form Handler
+    function handleBookingSubmit(e) {
+      e.preventDefault();
+      const date = document.getElementById('bookDate').value;
+      const time = document.getElementById('bookTime').value;
+      const guests = document.getElementById('bookGuests').value;
+      const zone = document.getElementById('bookZone').value;
+      const name = document.getElementById('bookName').value;
+      const phone = document.getElementById('bookPhone').value;
+
+      const message = `Namaste Ariyan's Restaurant! 🙏\n\nI would like to reserve a table:\n• Name: ${name}\n• Phone: ${phone}\n• Party Size: ${guests}\n• Date: ${date}\n• Time: ${time}\n• Seating Zone: ${zone}\n\nPlease confirm availability for our visit. Thank you!`;
+      const url = `https://wa.me/919325024374?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+
+    // Google Reviews Modal Logic
+    const drafts = [
+      "The Chicken Matka Tandoori here is cooked to absolute perfection. Tender, smoky, and infused with deep earthen aromas. Easily our favorite non-veg starter in Keshav Nagar!",
+      "Ordered the Chicken Tandoori Lollipop and loved the crisp char on the outside. Juicy on the inside and paired with delicious mint chutney. Five stars for food and quick service!",
+      "If you love coastal food, try their Bangda Tandoori. The fish was fresh, perfectly spiced, and had a lovely smoky edge. Will definitely visit again for weekend drinks and fish fry.",
+      "Bombil Kurkure is an absolute must-order at Ariyan’s. Golden, super crunchy, and completely non-greasy. One of the best seafood starters in the Mundhwa area!",
+      "The Chicken Kala Masala with hot Jowar Bhakri was pure perfection. Deep, slow-cooked roasted black spices that reminded us of traditional village recipes. Easily a 5-star dish!",
+      "The Jamun Shot here is phenomenal! Real fruit pulp, black salt, and a chilled punch that refreshes you instantly. Plus the Buy 1 Get 1 Free offer at ₹350 makes it unbeatable value!",
+      "The family seating with the tree and jungle view is so peaceful and refreshing! Dining surrounded by natural greenery made our family dinner feel like a weekend getaway.",
+      "Hosted my daughter’s birthday party in their Party Hall and the experience was flawless! The fact that they provide complete hall decoration free of cost saved us so much time and money."
+    ];
+
+    function openReviewModal() {
+      document.getElementById('reviewModal').classList.add('is-open');
+    }
+    function closeReviewModal() {
+      document.getElementById('reviewModal').classList.remove('is-open');
+    }
+    function shuffleDraft() {
+      const random = drafts[Math.floor(Math.random() * drafts.length)];
+      document.getElementById('reviewText').innerText = `"${random}"`;
+      document.getElementById('copyStatus').innerText = 'New draft generated.';
+    }
+    function setMood(m) { shuffleDraft(); }
+    function copyDraft() {
+      const text = document.getElementById('reviewText').innerText.replace(/^"|"$/g, '');
+      navigator.clipboard.writeText(text).then(() => {
+        document.getElementById('copyStatus').innerText = '✓ Copied to clipboard!';
+      });
+    }
+    function copyAndOpenGoogle() {
+      copyDraft();
+      document.getElementById('copyStatus').innerText = '✓ Copied! Opening Google Maps...';
+      const googleUrl = "https://www.google.com/maps/place/Aryan's+Family+Restaurant+%26+Bar/@18.5265193,73.9537672,17z/data=!4m8!3m7!1s0x3bc2c2372fc2755d:0xf79db1cf45c53816!8m2!3d18.5265193!4d73.9537672!9m1!1b1!16s%2Fg%2F1pp2tyh4z?entry=ttu";
+      setTimeout(() => { window.open(googleUrl, '_blank', 'noopener,noreferrer'); }, 600);
+    }
+  </script>
+</body>
+</html>
